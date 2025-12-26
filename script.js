@@ -44,7 +44,7 @@ function actualizarMalla() {
 }
 
 function reiniciarMalla() {
-    if(confirm("¿Seguro que quieres borrar tu progreso?")) {
+    if(confirm("¿Seguro que quieres borrar todo tu progreso?")) {
         localStorage.removeItem('mallaOdontoFinalUC');
         location.reload();
     }
