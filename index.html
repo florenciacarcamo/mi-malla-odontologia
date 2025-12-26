@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malla Odontología UC</title>
+    <title>Malla Interactiva Odontología UC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
 
     <div class="malla-container">
         <div class="semestre">
-            <div class="sem-header">Semestre I</div>
+            <div class="sem-header">I</div>
             <div class="ramo disponible" id="ODO103" onclick="marcar('ODO103')"><span class="sigla">ODO103</span><p>Intro. Odontología</p></div>
             <div class="ramo disponible" id="MED1030" onclick="marcar('MED1030')"><span class="sigla">MED1030</span><p>Anatomía I</p></div>
             <div class="ramo disponible" id="QIM2010" onclick="marcar('QIM2010')"><span class="sigla">QIM2010</span><p>Química</p></div>
@@ -27,10 +27,22 @@
         </div>
 
         <div class="semestre">
-            <div class="sem-header">Electivos FG</div>
+            <div class="sem-header">II</div>
+            <div class="ramo bloqueado" id="MED1040" data-req="MED1030" onclick="marcar('MED1040')"><span class="sigla">MED1040</span><p>Anatomía II</p></div>
+            <div class="ramo bloqueado" id="BIO2160" data-req="BIO2140" onclick="marcar('BIO2160')"><span class="sigla">BIO2160</span><p>Bio. Celular II</p></div>
+            <div class="ramo disponible" id="FIS1090" onclick="marcar('FIS1090')"><span class="sigla">FIS1090</span><p>Física Odont.</p></div>
+            <div class="ramo disponible" id="FIL2001" onclick="marcar('FIL2001')"><span class="sigla">FIL2001</span><p>Filosofía</p></div>
+            <div class="ramo disponible" id="VRA4000" onclick="marcar('VRA4000')"><span class="sigla">VRA4000</span><p>Integridad Académica</p></div>
+        </div>
+
+        <div class="semestre">
+            <div class="sem-header">FG</div>
             <div class="ramo disponible" id="FG1" onclick="marcar('FG1')"><span class="sigla">FG</span><p>Formación General 1</p></div>
             <div class="ramo disponible" id="FG2" onclick="marcar('FG2')"><span class="sigla">FG</span><p>Formación General 2</p></div>
             <div class="ramo disponible" id="FG3" onclick="marcar('FG3')"><span class="sigla">FG</span><p>Formación General 3</p></div>
+            <div class="ramo disponible" id="FG4" onclick="marcar('FG4')"><span class="sigla">FG</span><p>Formación General 4</p></div>
+            <div class="ramo disponible" id="FG5" onclick="marcar('FG5')"><span class="sigla">FG</span><p>Formación General 5</p></div>
+            <div class="ramo disponible" id="FG6" onclick="marcar('FG6')"><span class="sigla">FG</span><p>Formación General 6</p></div>
         </div>
     </div>
     <script src="script.js"></script>
