@@ -1,5 +1,5 @@
 window.onload = function() {
-    const data = JSON.parse(localStorage.getItem('mallaOdontoUC')) || [];
+    const data = JSON.parse(localStorage.getItem('mallaOdont')) || [];
     data.forEach(id => {
         const el = document.getElementById(id);
         if(el) el.classList.add('aprobado');
@@ -11,7 +11,7 @@ function marcar(id) {
     const el = document.getElementById(id);
     el.classList.toggle('aprobado');
     const aprobados = Array.from(document.querySelectorAll('.ramo.aprobado')).map(r => r.id);
-    localStorage.setItem('mallaOdontoUC', JSON.stringify(aprobados));
+    localStorage.setItem('mallaOdont', JSON.stringify(aprobados));
     actualizarMalla();
 }
 
@@ -37,8 +37,8 @@ function actualizarMalla() {
 }
 
 function reiniciarMalla() {
-    if(confirm("¿Seguro quieres borrar tu progreso?")) {
-        localStorage.removeItem('mallaOdontoUC');
+    if(confirm("¿Borrar progreso?")) {
+        localStorage.removeItem('mallaOdont');
         location.reload();
     }
 }
