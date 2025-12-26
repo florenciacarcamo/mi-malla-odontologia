@@ -1,131 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malla Interactiva Odontología UC</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="header-malla">
-        <h1>Malla Interactiva – Odontología – UC</h1>
-        <div class="stats-container">
-            <p>Avance total: <span id="porcentaje">0.0</span>% | Créditos: <span id="creditos">0</span></p>
-            <div class="progress-bar"><div id="progress-fill"></div></div>
-        </div>
-        <button onclick="reiniciarMalla()" class="btn-reiniciar">Reiniciar progreso</button>
-    </div>
+<div class="semestre">
+    <div class="sem-header">IX</div>
+    <div class="ramo bloqueado" id="ODO518" data-cr="10" data-req="ODO423" onclick="marcar('ODO518')"><span class="sigla">ODO518</span><p>Clínica Integral del Niño III</p></div>
+    <div class="ramo bloqueado" id="ODO519" data-cr="10" data-req="ODO424" onclick="marcar('ODO519')"><span class="sigla">ODO519</span><p>Clínica Integral del Adulto III</p></div>
+    <div class="ramo bloqueado" id="ODO520" data-cr="10" data-req="ODO425" onclick="marcar('ODO520')"><span class="sigla">ODO520</span><p>Cirugía Bucal III</p></div>
+    <div class="ramo bloqueado" id="ODO521" data-cr="5" data-req="ODO419" onclick="marcar('ODO521')"><span class="sigla">ODO521</span><p>Odontología Geriátrica I</p></div>
+    <div class="ramo disponible" id="ODO522" data-cr="5" onclick="marcar('ODO522')"><span class="sigla">ODO522</span><p>Odontología Legal</p></div> <div class="ramo disponible" id="FG4" data-cr="10" onclick="marcar('FG4')"><span class="sigla">FG</span><p>Formación General 4</p></div>
+</div>
 
-    <div class="malla-container">
-        <div class="semestre">
-            <div class="sem-header">I</div>
-            <div class="ramo disponible" id="ODO103" data-cr="5" onclick="marcar('ODO103')"><span class="sigla">ODO103</span><p>Introducción a la Odontología</p></div>
-            <div class="ramo disponible" id="MED1030" data-cr="10" onclick="marcar('MED1030')"><span class="sigla">MED1030</span><p>Anatomía Topográfica y Embriología I</p></div>
-            <div class="ramo disponible" id="QIM2010" data-cr="10" onclick="marcar('QIM2010')"><span class="sigla">QIM2010</span><p>Química</p></div>
-            <div class="ramo disponible" id="BIO2140" data-cr="10" onclick="marcar('BIO2140')"><span class="sigla">BIO2140</span><p>Biología Celular I</p></div>
-            <div class="ramo disponible" id="ODO104" data-cr="10" onclick="marcar('ODO104')"><span class="sigla">ODO104</span><p>Bioestadística</p></div>
-            <div class="ramo disponible" id="VRA100C" data-cr="0" onclick="marcar('VRA100C')"><span class="sigla">VRA100C</span><p>Prueba de Comunicación Escrita</p></div>
-        </div>
+<div class="semestre">
+    <div class="sem-header">X</div>
+    <div class="ramo bloqueado" id="ODO525" data-cr="10" data-req="ODO518" onclick="marcar('ODO525')"><span class="sigla">ODO525</span><p>Clínica Integral del Niño IV</p></div>
+    <div class="ramo bloqueado" id="ODO523" data-cr="10" data-req="ODO519" onclick="marcar('ODO523')"><span class="sigla">ODO523</span><p>Clínica Integral del Adulto IV</p></div>
+    <div class="ramo bloqueado" id="ODO524" data-cr="10" data-req="ODO520" onclick="marcar('ODO524')"><span class="sigla">ODO524</span><p>Cirugía Bucal IV</p></div>
+    <div class="ramo bloqueado" id="ODO526" data-cr="5" data-req="ODO521" onclick="marcar('ODO526')"><span class="sigla">ODO526</span><p>Odontología Geriátrica II</p></div>
+    <div class="ramo bloqueado" id="ODO527" data-cr="5" data-req="ODO317" onclick="marcar('ODO527')"><span class="sigla">ODO527</span><p>Administración en Salud</p></div>
+    <div class="ramo disponible" id="FG5" data-cr="10" onclick="marcar('FG5')"><span class="sigla">FG</span><p>Formación General 5</p></div>
+</div>
 
-        <div class="semestre">
-            <div class="sem-header">II</div>
-            <div class="ramo bloqueado" id="MED1040" data-req="MED1030" data-cr="10" onclick="marcar('MED1040')"><span class="sigla">MED1040</span><p>Anatomía Topográfica y Embriología II</p></div>
-            <div class="ramo bloqueado" id="BIO2160" data-req="BIO2140" data-cr="10" onclick="marcar('BIO2160')"><span class="sigla">BIO2160</span><p>Biología Celular II</p></div>
-            <div class="ramo disponible" id="FIS1090" data-cr="10" onclick="marcar('FIS1090')"><span class="sigla">FIS1090</span><p>Física para Odontología</p></div>
-            <div class="ramo disponible" id="ODO105" data-cr="10" onclick="marcar('ODO105')"><span class="sigla">ODO105</span><p>Histología</p></div>
-            <div class="ramo disponible" id="FIL2001" data-cr="10" onclick="marcar('FIL2001')"><span class="sigla">FIL2001</span><p>Filosofía: ¿Para qué?</p></div>
-            <div class="ramo disponible" id="VRA4000" data-cr="0" onclick="marcar('VRA4000')"><span class="sigla">VRA4000</span><p>Integridad Académica</p></div>
-        </div>
+<div class="semestre">
+    <div class="sem-header">XI</div>
+    <div class="ramo bloqueado" id="ODO620" data-cr="50" data-req="ODO523" onclick="marcar('ODO620')"><span class="sigla">ODO620</span><p>Internado de Odontología</p></div>
+    <div class="ramo disponible" id="FG6" data-cr="10" onclick="marcar('FG6')"><span class="sigla">FG</span><p>Formación General 6</p></div>
+</div>
 
-        <div class="semestre">
-            <div class="sem-header">III</div>
-            <div class="ramo bloqueado" id="ODO205" data-req="MED1040" data-cr="10" onclick="marcar('ODO205')"><span class="sigla">ODO205</span><p>Neurociencias, Dolor y Oclusión</p></div>
-            <div class="ramo bloqueado" id="ODO206" data-req="ODO103" data-cr="10" onclick="marcar('ODO206')"><span class="sigla">ODO206</span><p>Preclínico de Odontología Restauradora I</p></div>
-            <div class="ramo bloqueado" id="BIO2540" data-req="BIO2160" data-cr="15" onclick="marcar('BIO2540')"><span class="sigla">BIO2540</span><p>Fisiología para Odontología</p></div>
-            <div class="ramo bloqueado" id="ODO207" data-req="ODO104" data-cr="10" onclick="marcar('ODO207')"><span class="sigla">ODO207</span><p>Epidemiología</p></div>
-            <div class="ramo disponible" id="TTF" data-cr="10" onclick="marcar('TTF')"><span class="sigla">TTF</span><p>Formación Teológica</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">IV</div>
-            <div class="ramo bloqueado" id="ODO210" data-req="ODO206" data-cr="10" onclick="marcar('ODO210')"><span class="sigla">ODO210</span><p>Preclínico de Odontología Restauradora II</p></div>
-            <div class="ramo bloqueado" id="ODO211" data-req="ODO103" data-cr="5" onclick="marcar('ODO211')"><span class="sigla">ODO211</span><p>Introducción a la Clínica Odontológica</p></div>
-            <div class="ramo disponible" id="ODO208" data-cr="10" onclick="marcar('ODO208')"><span class="sigla">ODO208</span><p>Microbiología</p></div>
-            <div class="ramo disponible" id="ODO209" data-cr="5" onclick="marcar('ODO209')"><span class="sigla">ODO209</span><p>Imagenología Diagnóstica I</p></div>
-            <div class="ramo bloqueado" id="ODO212" data-req="BIO2160" data-cr="10" onclick="marcar('ODO212')"><span class="sigla">ODO212</span><p>Patología General</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">V</div>
-            <div class="ramo bloqueado" id="ODO309" data-req="ODO211" data-cr="5" onclick="marcar('ODO309')"><span class="sigla">ODO309</span><p>Odontología Clínica I</p></div>
-            <div class="ramo bloqueado" id="ODO310" data-req="ODO210" data-cr="10" onclick="marcar('ODO310')"><span class="sigla">ODO310</span><p>Preclínico de Rehabilitación Oral I</p></div>
-            <div class="ramo bloqueado" id="ODO311" data-req="ODO211" data-cr="10" onclick="marcar('ODO311')"><span class="sigla">ODO311</span><p>Preclínico de Periodoncia</p></div>
-            <div class="ramo disponible" id="ODO314" data-cr="10" onclick="marcar('ODO314')"><span class="sigla">ODO314</span><p>Farmacología</p></div>
-            <div class="ramo bloqueado" id="ODO312" data-req="ODO212" data-cr="10" onclick="marcar('ODO312')"><span class="sigla">ODO312</span><p>Fisiopatología y Semiología</p></div>
-            <div class="ramo bloqueado" id="ODO313" data-req="ODO212" data-cr="10" onclick="marcar('ODO313')"><span class="sigla">ODO313</span><p>Patología Bucomaxilofacial I</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">VI</div>
-            <div class="ramo bloqueado" id="ODO315" data-req="ODO309" data-cr="5" onclick="marcar('ODO315')"><span class="sigla">ODO315</span><p>Odontología Clínica II</p></div>
-            <div class="ramo bloqueado" id="ODO316" data-req="ODO310" data-cr="10" onclick="marcar('ODO316')"><span class="sigla">ODO316</span><p>Preclínico de Rehabilitación Oral II</p></div>
-            <div class="ramo bloqueado" id="ODO319" data-req="ODO310" data-cr="10" onclick="marcar('ODO319')"><span class="sigla">ODO319</span><p>Preclínico de Endodoncia</p></div>
-            <div class="ramo bloqueado" id="ODO317" data-req="ODO207" data-cr="10" onclick="marcar('ODO317')"><span class="sigla">ODO317</span><p>Salud Pública</p></div>
-            <div class="ramo disponible" id="ODO318" data-cr="10" onclick="marcar('ODO318')"><span class="sigla">ODO318</span><p>Ética Clínica</p></div>
-            <div class="ramo disponible" id="FG1" data-cr="10" onclick="marcar('FG1')"><span class="sigla">FG</span><p>Formación General 1</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">VII</div>
-            <div class="ramo bloqueado" id="ODO418" data-req="ODO315" data-cr="10" onclick="marcar('ODO418')"><span class="sigla">ODO418</span><p>Clínica Integral del Niño I</p></div>
-            <div class="ramo bloqueado" id="ODO419" data-req="ODO315" data-cr="10" onclick="marcar('ODO419')"><span class="sigla">Clínica Integral del Adulto I</span></div>
-            <div class="ramo bloqueado" id="ODO420" data-req="ODO315" data-cr="10" onclick="marcar('ODO420')"><span class="sigla">ODO420</span><p>Cirugía Bucal I</p></div>
-            <div class="ramo bloqueado" id="ODO421" data-req="ODO209" data-cr="5" onclick="marcar('ODO421')"><span class="sigla">ODO421</span><p>Imagenología Diagnóstica II</p></div>
-            <div class="ramo disponible" id="FG2" data-cr="10" onclick="marcar('FG2')"><span class="sigla">FG</span><p>Formación General 2</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">VIII</div>
-            <div class="ramo bloqueado" id="ODO423" data-req="ODO418" data-cr="10" onclick="marcar('ODO423')"><span class="sigla">ODO423</span><p>Clínica Integral del Niño II</p></div>
-            <div class="ramo bloqueado" id="ODO424" data-req="ODO419" data-cr="10" onclick="marcar('ODO424')"><span class="sigla">Clínica Integral del Adulto II</span></div>
-            <div class="ramo bloqueado" id="ODO425" data-req="ODO420" data-cr="10" onclick="marcar('ODO425')"><span class="sigla">ODO425</span><p>Cirugía Bucal II</p></div>
-            <div class="ramo bloqueado" id="ODO422" data-req="ODO313" data-cr="10" onclick="marcar('ODO422')"><span class="sigla">ODO422</span><p>Patología Bucomaxilofacial II</p></div>
-            <div class="ramo disponible" id="FG3" data-cr="10" onclick="marcar('FG3')"><span class="sigla">FG</span><p>Formación General 3</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">IX</div>
-            <div class="ramo bloqueado" id="ODO518" data-req="ODO423" data-cr="10" onclick="marcar('ODO518')"><span class="sigla">ODO518</span><p>Clínica Integral del Niño III</p></div>
-            <div class="ramo bloqueado" id="ODO519" data-req="ODO424" data-cr="10" onclick="marcar('ODO519')"><span class="sigla">Clínica Integral del Adulto III</span></div>
-            <div class="ramo bloqueado" id="ODO520" data-req="ODO425" data-cr="10" onclick="marcar('ODO520')"><span class="sigla">ODO520</span><p>Cirugía Bucal III</p></div>
-            <div class="ramo bloqueado" id="ODO521" data-req="ODO419" data-cr="5" onclick="marcar('ODO521')"><span class="sigla">ODO521</span><p>Odontología Geriátrica I</p></div>
-            <div class="ramo disponible" id="FG4" data-cr="10" onclick="marcar('FG4')"><span class="sigla">FG</span><p>Formación General 4</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">X</div>
-            <div class="ramo bloqueado" id="ODO525" data-req="ODO518" data-cr="10" onclick="marcar('ODO525')"><span class="sigla">ODO525</span><p>Clínica Integral del Niño IV</p></div>
-            <div class="ramo bloqueado" id="ODO523" data-req="ODO519" data-cr="10" onclick="marcar('ODO523')"><span class="sigla">Clínica Integral del Adulto IV</span></div>
-            <div class="ramo bloqueado" id="ODO524" data-req="ODO520" data-cr="10" onclick="marcar('ODO524')"><span class="sigla">ODO524</span><p>Cirugía Bucal IV</p></div>
-            <div class="ramo bloqueado" id="ODO526" data-req="ODO521" data-cr="5" onclick="marcar('ODO526')"><span class="sigla">ODO526</span><p>Odontología Geriátrica II</p></div>
-            <div class="ramo disponible" id="ODO522" data-cr="5" onclick="marcar('ODO522')"><span class="sigla">ODO522</span><p>Odontología Legal</p></div>
-            <div class="ramo bloqueado" id="ODO527" data-req="ODO317" data-cr="5" onclick="marcar('ODO527')"><span class="sigla">ODO527</span><p>Administración en Salud</p></div>
-            <div class="ramo disponible" id="FG5" data-cr="10" onclick="marcar('FG5')"><span class="sigla">FG</span><p>Formación General 5</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">XI</div>
-            <div class="ramo bloqueado" id="ODO620" data-req="ODO523" data-cr="50" onclick="marcar('ODO620')"><span class="sigla">ODO620</span><p>Internado de Odontología</p></div>
-            <div class="ramo disponible" id="ODO619" data-cr="5" onclick="marcar('ODO619')"><span class="sigla">ODO619</span><p>Cuidados Especiales en Odontología</p></div>
-            <div class="ramo disponible" id="FG6" data-cr="10" onclick="marcar('FG6')"><span class="sigla">FG</span><p>Formación General 6</p></div>
-        </div>
-
-        <div class="semestre">
-            <div class="sem-header">XII</div>
-            <div class="ramo bloqueado" id="ODO621" data-req="ODO620" data-cr="40" onclick="marcar('ODO621')"><span class="sigla">ODO621</span><p>Clínica de Práctica Avanzada</p></div>
-            <div class="ramo disponible" id="OPT" data-cr="10" onclick="marcar('OPT')"><span class="sigla">OPT</span><p>Optativo de Profundización</p></div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+<div class="semestre">
+    <div class="sem-header">XII</div>
+    <div class="ramo bloqueado" id="ODO621" data-cr="40" data-req="ODO620" onclick="marcar('ODO621')"><span class="sigla">ODO621</span><p>Clínica de Práctica Avanzada</p></div>
+    <div class="ramo disponible" id="ODO619" data-cr="5" onclick="marcar('ODO619')"><span class="sigla">ODO619</span><p>Cuidados Especiales en Odontología</p></div> <div class="ramo disponible" id="OPT" data-cr="10" onclick="marcar('OPT')"><span class="sigla">OPT</span><p>Optativo de Profundización</p></div>
+</div>
