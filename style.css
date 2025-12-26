@@ -1,69 +1,70 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow-y: auto; /* Bajar toda la página */
     background-color: #fdfdfd;
+    font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .header-malla {
     text-align: center;
     padding: 30px 20px;
-    background-color: #fff;
+    background: #fff;
 }
 
-.header-malla h1 { color: #8e1d41; margin-bottom: 10px; }
+.header-malla h1 { color: #8e1d41; margin-bottom: 15px; }
 
 .malla-container {
     display: flex;
     flex-wrap: nowrap;
-    gap: 12px;
+    gap: 15px;
     padding: 20px;
-    overflow-x: auto;
+    overflow-x: auto; /* Scroll lateral para semestres */
     align-items: flex-start;
 }
 
 .semestre {
-    min-width: 180px;
+    min-width: 175px; /* Ancho fijo para que no se vea "como el hoyo" */
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .sem-header {
-    background-color: #f8bbd0; /* Encabezado rosado QyF */
+    background-color: #f8bbd0; /* Rosado fuerte QyF */
     color: #ad1457;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     font-weight: bold;
     border-radius: 4px;
     text-transform: uppercase;
+    font-size: 14px;
 }
 
 .ramo {
-    background-color: #fff1f6; /* Fondo rosado pálido */
+    background-color: #fff1f6; /* Fondo rosado suave */
     border: 1px solid #f48fb1;
-    padding: 10px;
-    border-radius: 6px;
-    min-height: 85px;
+    padding: 12px;
+    border-radius: 8px;
+    min-height: 90px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     text-align: left;
-    transition: background-color 0.2s;
+    transition: 0.2s;
 }
 
-.sigla { font-size: 10px; font-weight: bold; color: #ad1457; margin-bottom: 2px; }
-.ramo p { margin: 0; font-size: 11.5px; color: #8e1d41; font-weight: 500; line-height: 1.2; }
-.cr { font-size: 9px; color: #ad1457; margin-top: auto; padding-top: 4px; }
+.sigla { font-size: 10px; font-weight: bold; color: #ad1457; margin-bottom: 5px; }
+.ramo p { margin: 0; font-size: 12px; color: #8e1d41; font-weight: 500; line-height: 1.3; }
+.cr { font-size: 9px; color: #ad1457; margin-top: auto; padding-top: 5px; }
 
-/* ESTADO APROBADO: Mismo color pero tachado */
+/* ESTADO APROBADO: Mantiene rosado y aplica tachado */
 .aprobado {
     background-color: #fff1f6 !important;
 }
 
 .aprobado p, .aprobado .sigla, .aprobado .cr {
-    text-decoration: line-through;
+    text-decoration: line-through; /* Tachado solicitado */
     opacity: 0.5;
 }
 
@@ -77,6 +78,6 @@ html, body {
 .bloqueado p, .bloqueado .sigla, .bloqueado .cr { color: #bdbdbd !important; }
 
 /* Barra de progreso */
-.progress-bar { width: 300px; height: 10px; background: #eee; border-radius: 5px; margin: 10px auto; overflow: hidden; }
+.progress-bar { width: 300px; height: 12px; background: #eee; border-radius: 6px; margin: 15px auto; overflow: hidden; }
 #progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
-.btn-reiniciar { background: #f8bbd0; color: #ad1457; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.btn-reiniciar { background: #f8bbd0; border: none; padding: 10px 25px; border-radius: 20px; color: #ad1457; font-weight: bold; cursor: pointer; }
