@@ -1,14 +1,14 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Scroll vertical fluido en toda la página */
+    overflow-y: auto; /* Scroll vertical fluido */
     background-color: #fdfdfd;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .header-malla {
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px;
     background: white;
     border-bottom: 2px solid #ad1457;
 }
@@ -25,7 +25,7 @@ html, body {
 }
 
 .semestre {
-    min-width: 205px; /* Evita que los semestres se desordenen */
+    min-width: 210px; /* Ancho suficiente para nombres largos */
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -42,11 +42,11 @@ html, body {
 }
 
 .ramo {
-    background-color: #fff1f6; /* Rosado de fondo para ramos */
+    background-color: #fff1f6; /* Rosado fondo de ramos */
     border: 1px solid #f8bbd0;
     padding: 12px;
     border-radius: 10px;
-    min-height: 110px;
+    min-height: 115px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@ html, body {
 }
 
 .sigla { font-size: 11px; font-weight: bold; color: #ad1457; }
-.ramo p { margin: 8px 0 0 0; font-size: 13px; color: #8e1d41; font-weight: 500; line-height: 1.2; }
+.ramo p { margin: 8px 0 0 0; font-size: 12px; color: #8e1d41; font-weight: 500; line-height: 1.2; }
 
 /* ESTADO APROBADO: Mantiene rosado y aplica tachado */
 .aprobado {
@@ -64,19 +64,20 @@ html, body {
 }
 
 .aprobado p, .aprobado .sigla {
-    text-decoration: line-through; /* Tachado solicitado */
+    text-decoration: line-through;
     opacity: 0.6;
 }
 
-/* ESTADO BLOQUEADO: Gris */
+/* BLOQUEADO: Gris */
 .bloqueado {
     background-color: #f5f5f5;
-    color: #adb5bd;
+    color: #bdbdbd;
     border-color: #dee2e6;
     pointer-events: none;
 }
-.bloqueado p, .bloqueado .sigla { color: #adb5bd !important; }
+.bloqueado p, .bloqueado .sigla { color: #bdbdbd !important; }
 
+/* Otros elementos */
 .progress-bar { width: 300px; height: 12px; background: #eee; border-radius: 6px; margin: 15px auto; overflow: hidden; }
 #progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
 .btn-reiniciar { background: #fce4ec; border: none; padding: 10px 20px; border-radius: 20px; color: #ad1457; cursor: pointer; font-weight: bold; }
