@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Malla Interactiva Odontología UC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Malla Odontología UC</h1>
+        <div class="stats">Progreso: <span id="porcentaje">0</span>%</div>
+    </header>
+
+    <div class="malla-container">
+        <div class="semestre">
+            <h3>I</h3>
+            <div class="ramo disponible" id="ODO103" onclick="intentarAprobar('ODO103')">Introducción a la Odontología</div>
+            <div class="ramo disponible" id="MED1030" onclick="intentarAprobar('MED1030')">Anatomía I</div>
+            <div class="ramo disponible" id="BIO2140" onclick="intentarAprobar('BIO2140')">Biología Celular I</div>
+            <div class="ramo disponible" id="QIM2010" onclick="intentarAprobar('QIM2010')">Química</div>
+        </div>
+
+        <div class="semestre">
+            <h3>II</h3>
+            <div class="ramo bloqueado" id="MED1040" data-req="MED1030" onclick="intentarAprobar('MED1040')">Anatomía II</div>
+            <div class="ramo bloqueado" id="BIO2160" data-req="BIO2140" onclick="intentarAprobar('BIO2160')">Biología Celular II</div>
+            <div class="ramo disponible" id="FIS1090" onclick="intentarAprobar('FIS1090')">Física Odontología</div>
+        </div>
+
+        <div class="semestre">
+            <h3>III</h3>
+            <div class="ramo bloqueado" id="ODO205" data-req="ODO103" onclick="intentarAprobar('ODO205')">Neurociencias y Oclusión</div>
+            <div class="ramo bloqueado" id="ODO206" data-req="ODO103" onclick="intentarAprobar('ODO206')">Preclínico Restauradora I</div>
+            <div class="ramo bloqueado" id="BIO2540" data-req="BIO2160" onclick="intentarAprobar('BIO2540')">Fisiología</div>
+        </div>
+
+        <div class="semestre">
+            <h3>IV</h3>
+            <div class="ramo bloqueado" id="ODO210" data-req="ODO206" onclick="intentarAprobar('ODO210')">Preclínico Restauradora II</div>
+            <div class="ramo bloqueado" id="ODO211" data-req="ODO206" onclick="intentarAprobar('ODO211')">Intr. Clínica Odontológica</div>
+        </div>
+
+        <div class="semestre">
+            <h3>Internado</h3>
+            <div class="ramo bloqueado" id="ODO620" data-req="ODO211" onclick="intentarAprobar('ODO620')">Internado</div>
+            <div class="ramo bloqueado" id="ODO621" data-req="ODO620" onclick="intentarAprobar('ODO621')">Práctica Avanzada</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
