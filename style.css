@@ -1,9 +1,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Permite scroll vertical en toda la página */
+    overflow-y: auto; /* Permite bajar toda la página */
     background-color: #f8f9fa;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header-malla {
@@ -39,7 +39,7 @@ html, body {
 }
 
 .ramo {
-    background-color: #fff1f6; /* Rosado de fondo */
+    background-color: #fff1f6; /* Rosado de fondo solicitado */
     border: 2px solid #f8bbd0;
     padding: 15px;
     border-radius: 10px;
@@ -55,14 +55,14 @@ html, body {
 .sigla { font-size: 11px; font-weight: bold; color: #ad1457; }
 .ramo p { margin: 8px 0 0 0; font-size: 13px; color: #ad1457; font-weight: 500; }
 
-/* ESTADO APROBADO: Mismo color pero tachado */
+/* ESTADO APROBADO: Mantiene el rosado pero tacha el texto */
 .aprobado {
-    background-color: #fff1f6 !important;
-    border: 2px solid #ad1457 !important;
+    background-color: #fff1f6 !important; /* No cambia a morado */
+    border: 2px solid #ad1457 !important; /* Borde más marcado */
 }
 
 .aprobado p, .aprobado .sigla {
-    text-decoration: line-through;
+    text-decoration: line-through; /* Tachado solicitado */
     opacity: 0.6;
 }
 
@@ -75,6 +75,7 @@ html, body {
 }
 .bloqueado p, .bloqueado .sigla { color: #adb5bd !important; }
 
+/* Barra de progreso */
 .progress-bar { width: 300px; height: 12px; background: #eee; border-radius: 6px; margin: 15px auto; overflow: hidden; }
 #progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
 .btn-reiniciar { background: white; border: 1px solid #ad1457; padding: 10px 20px; border-radius: 20px; color: #ad1457; cursor: pointer; }
