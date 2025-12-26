@@ -1,5 +1,5 @@
 window.onload = function() {
-    const data = JSON.parse(localStorage.getItem('mallaOdontFinal')) || [];
+    const data = JSON.parse(localStorage.getItem('mallaOdontoFinalUC')) || [];
     data.forEach(id => {
         const el = document.getElementById(id);
         if(el) el.classList.add('aprobado');
@@ -11,7 +11,7 @@ function marcar(id) {
     const el = document.getElementById(id);
     el.classList.toggle('aprobado');
     const aprobados = Array.from(document.querySelectorAll('.ramo.aprobado')).map(r => r.id);
-    localStorage.setItem('mallaOdontFinal', JSON.stringify(aprobados));
+    localStorage.setItem('mallaOdontoFinalUC', JSON.stringify(aprobados));
     actualizarMalla();
 }
 
@@ -19,7 +19,7 @@ function actualizarMalla() {
     const ramos = document.querySelectorAll('.ramo');
     let count = 0;
     let totalCr = 0;
-    
+
     ramos.forEach(r => {
         const reqId = r.getAttribute('data-req');
         if(reqId) {
@@ -44,8 +44,8 @@ function actualizarMalla() {
 }
 
 function reiniciarMalla() {
-    if(confirm("¿Borrar progreso?")) {
-        localStorage.removeItem('mallaOdontFinal');
+    if(confirm("¿Seguro que quieres borrar todo tu progreso?")) {
+        localStorage.removeItem('mallaOdontoFinalUC');
         location.reload();
     }
 }
