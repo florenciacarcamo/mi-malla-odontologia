@@ -1,52 +1,45 @@
 window.onload = function() {
-    const guardado = JSON.parse(localStorage.getItem('mallaOdontoProgreso')) || [];
-    guardado.forEach(id => {
-        const ramo = document.getElementById(id);
-        if (ramo) ramo.classList.add('aprobado');
+    const data = JSON.parse(localStorage.getItem('mallaUC')) || [];
+    data.forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.classList.add('aprobado');
     });
     actualizarMalla();
 };
 
 function marcar(id) {
-    const ramo = document.getElementById(id);
-    ramo.classList.toggle('aprobado');
-    guardarProgreso();
+    const el = document.getElementById(id);
+    el.classList.toggle('aprobado');
+    const aprobados = Array.from(document.querySelectorAll('.ramo.aprobado')).map(r => r.id);
+    localStorage.setItem('mallaUC', JSON.stringify(aprobados));
     actualizarMalla();
-}
-
-function guardarProgreso() {
-    const aprobados = document.querySelectorAll('.ramo.aprobado');
-    const listaIds = Array.from(aprobados).map(r => r.id);
-    localStorage.setItem('mallaOdontoProgreso', JSON.stringify(listaIds));
 }
 
 function actualizarMalla() {
     const ramos = document.querySelectorAll('.ramo');
-    let contador = 0;
-
+    let count = 0;
     ramos.forEach(r => {
-        const reqId = r.getAttribute('data-req');
-        if (reqId) {
-            const req = document.getElementById(reqId);
-            if (req && req.classList.contains('aprobado')) {
+        const req = r.getAttribute('data-req');
+        if(req) {
+            const pre = document.getElementById(req);
+            if(pre && pre.classList.contains('aprobado')) {
                 r.classList.remove('bloqueado');
             } else {
                 r.classList.add('bloqueado');
                 r.classList.remove('aprobado');
             }
         }
-        if (r.classList.contains('aprobado')) contador++;
+        if(r.classList.contains('aprobado')) count++;
     });
-
-    document.getElementById('contador').innerText = contador;
-    const porcentaje = ((contador / ramos.length) * 100).toFixed(1);
-    document.getElementById('porcentaje').innerText = porcentaje;
-    document.getElementById('progress-fill').style.width = porcentaje + "%";
+    const porc = ((count / ramos.length) * 100).toFixed(1);
+    document.getElementById('porcentaje').innerText = porc;
+    document.getElementById('contador').innerText = count;
+    document.getElementById('progress-fill').style.width = porc + "%";
 }
 
 function reiniciarMalla() {
     if(confirm("¿Borrar progreso?")) {
-        localStorage.removeItem('mallaOdontoProgreso');
+        localStorage.removeItem('mallaUC');
         location.reload();
     }
 }
