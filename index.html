@@ -3,42 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malla Odontología UC</title>
+    <title>Malla Interactiva Odontología UC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header-malla">
-        <h1>Malla Odontología UC</h1>
-        <div class="stats">Avance total: <span id="porcentaje">0.0</span>%</div>
-        <div class="progress-bar"><div id="progress-fill"></div></div>
-        <button onclick="reiniciarMalla()" class="btn-reiniciar">Reiniciar Progreso</button>
-    </header>
+    <div class="header-malla">
+        <h1>Malla Interactiva – Odontología – UC</h1>
+        <div class="stats-container">
+            <p>Avance total: <span id="porcentaje">0.0</span>% | Créditos: <span id="creditos">0</span></p>
+            <div class="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+        <button onclick="reiniciarMalla()" class="btn-reiniciar">Reiniciar malla</button>
+    </div>
 
     <div class="malla-container">
         <div class="semestre">
             <div class="sem-header">I</div>
-            <div class="ramo disponible" id="ODO103" onclick="marcar('ODO103')"><span class="sigla">ODO103</span><p>Introducción a la Odontología</p></div>
-            <div class="ramo disponible" id="MED1030" onclick="marcar('MED1030')"><span class="sigla">MED1030</span><p>Anatomía Topográfica y Embriología I</p></div>
-            <div class="ramo disponible" id="QIM2010" onclick="marcar('QIM2010')"><span class="sigla">QIM2010</span><p>Química</p></div>
-            <div class="ramo disponible" id="BIO2140" onclick="marcar('BIO2140')"><span class="sigla">BIO2140</span><p>Biología Celular I</p></div>
-            <div class="ramo disponible" id="ODO104" onclick="marcar('ODO104')"><span class="sigla">ODO104</span><p>Bioestadística</p></div>
-            <div class="ramo disponible" id="VRA100C" onclick="marcar('VRA100C')"><span class="sigla">VRA100C</span><p>Prueba Comunicación Escrita</p></div>
+            <div class="ramo disponible" id="ODO103" data-cr="5" onclick="marcar('ODO103')"><span class="sigla">ODO103</span><p>Introducción a la Odontología</p><span class="cr">Créditos: 5</span></div>
+            <div class="ramo disponible" id="MED1030" data-cr="10" onclick="marcar('MED1030')"><span class="sigla">MED1030</span><p>Anatomía Topográfica I</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo disponible" id="QIM2010" data-cr="10" onclick="marcar('QIM2010')"><span class="sigla">QIM2010</span><p>Química</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo disponible" id="BIO2140" data-cr="10" onclick="marcar('BIO2140')"><span class="sigla">BIO2140</span><p>Biología Celular I</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo disponible" id="ODO104" data-cr="10" onclick="marcar('ODO104')"><span class="sigla">ODO104</span><p>Bioestadística</p><span class="cr">Créditos: 10</span></div>
         </div>
 
         <div class="semestre">
             <div class="sem-header">II</div>
-            <div class="ramo bloqueado" id="MED1040" data-req="MED1030" onclick="marcar('MED1040')"><span class="sigla">MED1040</span><p>Anatomía Topográfica y Embriología II</p></div>
-            <div class="ramo bloqueado" id="BIO2160" data-req="BIO2140" onclick="marcar('BIO2160')"><span class="sigla">BIO2160</span><p>Biología Celular II</p></div>
-            <div class="ramo disponible" id="FIS1090" onclick="marcar('FIS1090')"><span class="sigla">FIS1090</span><p>Física para Odontología</p></div>
-            <div class="ramo disponible" id="ODO105" onclick="marcar('ODO105')"><span class="sigla">ODO105</span><p>Histología</p></div>
-            <div class="ramo disponible" id="FIL2001" onclick="marcar('FIL2001')"><span class="sigla">FIL2001</span><p>Filosofía: ¿Para qué?</p></div>
-            <div class="ramo disponible" id="VRA4000" onclick="marcar('VRA4000')"><span class="sigla">VRA4000</span><p>Integridad Académica</p></div>
+            <div class="ramo bloqueado" id="MED1040" data-req="MED1030" data-cr="10" onclick="marcar('MED1040')"><span class="sigla">MED1040</span><p>Anatomía Topográfica II</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo bloqueado" id="BIO2160" data-req="BIO2140" data-cr="10" onclick="marcar('BIO2160')"><span class="sigla">BIO2160</span><p>Biología Celular II</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo disponible" id="FIS1090" data-cr="10" onclick="marcar('FIS1090')"><span class="sigla">FIS1090</span><p>Física para Odontología</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo disponible" id="FIL2001" data-cr="10" onclick="marcar('FIL2001')"><span class="sigla">FIL2001</span><p>Filosofía: ¿Para qué?</p><span class="cr">Créditos: 10</span></div>
         </div>
 
         <div class="semestre">
             <div class="sem-header">III</div>
-            <div class="ramo bloqueado" id="ODO205" data-req="MED1040" onclick="marcar('ODO205')"><span class="sigla">ODO205</span><p>Neurociencias, Dolor y Oclusión</p></div>
-            <div class="ramo bloqueado" id="ODO206" data-req="ODO103" onclick="marcar('ODO206')"><span class="sigla">ODO206</span><p>Preclínico Restauradora I</p></div>
-            <div class="ramo bloqueado" id="BIO2540" data-req="BIO2160" onclick="marcar('BIO2540')"><span class="sigla">BIO2540</span><p>Fisiología para Odontología</p></div>
-            <div class="ramo bloqueado" id="ODO207" data-req="ODO104" onclick="marcar('ODO207')"><span class="sigla">ODO207</span><p>Epidemiología</p></div>
-            <div class="ramo disponible" id="TIF" onclick="marcar('TIF')"><span class="sigla">TIF</span><p>Formación
+            <div class="ramo bloqueado" id="ODO205" data-req="MED1040" data-cr="10" onclick="marcar('ODO205')"><span class="sigla">ODO205</span><p>Neurociencias y Oclusión</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo bloqueado" id="ODO206" data-req="ODO103" data-cr="10" onclick="marcar('ODO206')"><span class="sigla">ODO206</span><p>Preclínico Restauradora I</p><span class="cr">Créditos: 10</span></div>
+            <div class="ramo bloqueado" id="BIO2540" data-req="BIO2160" data-cr="15" onclick="marcar('BIO2540')"><span class="sigla">BIO2540</span><p>Fisiología</p><span class="cr">Créditos: 15</span></div>
+        </div>
+
+        <div class="semestre">
+            <div class="sem-header">VI</div>
+            <div class="ramo bloqueado" id="ODO315" data-req="ODO309" data-cr="5" onclick="marcar('ODO315')"><span class="sigla">ODO315</span><p>Odontología Clínica II</p><span class="cr">Créditos: 5</span></div>
+            <div class="ramo disponible" id="FG1" data-cr="10" onclick="marcar('FG1')"><span class="sigla">FG</span><p>Formación General</p><span class="cr">Créditos: 10</span></div>
+        </div>
+
+        <div class="semestre">
+            <div class="sem-header">XI-XII</div>
+            <div class="ramo bloqueado" id="ODO620" data-req="ODO523" data-cr="50" onclick="marcar('ODO620')"><span class="sigla">ODO620</span><p>Internado</p><span class="cr">Créditos: 50</span></div>
+            <div class="ramo bloqueado" id="ODO621" data-req="ODO620" data-cr="40" onclick="marcar('ODO621')"><span class="sigla">ODO621</span><p>Práctica Avanzada</p><span class="cr">Créditos: 40</span></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
