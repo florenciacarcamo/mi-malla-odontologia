@@ -1,81 +1,82 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Permite bajar toda la página */
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: auto;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fdfdfd;
 }
 
 .header-malla {
     text-align: center;
-    padding: 30px;
-    background: white;
-    border-bottom: 4px solid #ad1457;
+    padding: 30px 20px;
+    background-color: #fff;
 }
+
+.header-malla h1 { color: #8e1d41; margin-bottom: 10px; }
 
 .malla-container {
     display: flex;
     flex-wrap: nowrap;
-    gap: 15px;
-    padding: 30px;
-    overflow-x: auto; /* Scroll horizontal de semestres */
+    gap: 12px;
+    padding: 20px;
+    overflow-x: auto;
     align-items: flex-start;
 }
 
 .semestre {
-    min-width: 190px;
+    min-width: 180px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .sem-header {
-    background-color: #0056b3; /* Azul para encabezados */
-    color: white;
+    background-color: #f8bbd0; /* Encabezado rosado QyF */
+    color: #ad1457;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
 }
 
 .ramo {
-    background-color: #fff1f6; /* Rosado de fondo solicitado */
-    border: 2px solid #f8bbd0;
-    padding: 15px;
-    border-radius: 10px;
-    min-height: 100px;
+    background-color: #fff1f6; /* Fondo rosado pálido */
+    border: 1px solid #f48fb1;
+    padding: 10px;
+    border-radius: 6px;
+    min-height: 85px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    transition: 0.2s;
+    text-align: left;
+    transition: background-color 0.2s;
 }
 
-.sigla { font-size: 11px; font-weight: bold; color: #ad1457; }
-.ramo p { margin: 8px 0 0 0; font-size: 13px; color: #ad1457; font-weight: 500; }
+.sigla { font-size: 10px; font-weight: bold; color: #ad1457; margin-bottom: 2px; }
+.ramo p { margin: 0; font-size: 11.5px; color: #8e1d41; font-weight: 500; line-height: 1.2; }
+.cr { font-size: 9px; color: #ad1457; margin-top: auto; padding-top: 4px; }
 
-/* ESTADO APROBADO: Mantiene el rosado pero tacha el texto */
+/* ESTADO APROBADO: Mismo color pero tachado */
 .aprobado {
-    background-color: #fff1f6 !important; /* No cambia a morado */
-    border: 2px solid #ad1457 !important; /* Borde más marcado */
+    background-color: #fff1f6 !important;
 }
 
-.aprobado p, .aprobado .sigla {
-    text-decoration: line-through; /* Tachado solicitado */
-    opacity: 0.6;
+.aprobado p, .aprobado .sigla, .aprobado .cr {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
 
-/* BLOQUEADO: Gris */
+/* ESTADO BLOQUEADO: Gris */
 .bloqueado {
-    background-color: #e9ecef;
-    color: #adb5bd;
-    border-color: #dee2e6;
+    background-color: #f5f5f5;
+    color: #bdbdbd;
+    border-color: #e0e0e0;
     pointer-events: none;
 }
-.bloqueado p, .bloqueado .sigla { color: #adb5bd !important; }
+.bloqueado p, .bloqueado .sigla, .bloqueado .cr { color: #bdbdbd !important; }
 
 /* Barra de progreso */
-.progress-bar { width: 300px; height: 12px; background: #eee; border-radius: 6px; margin: 15px auto; overflow: hidden; }
+.progress-bar { width: 300px; height: 10px; background: #eee; border-radius: 5px; margin: 10px auto; overflow: hidden; }
 #progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
-.btn-reiniciar { background: white; border: 1px solid #ad1457; padding: 10px 20px; border-radius: 20px; color: #ad1457; cursor: pointer; }
+.btn-reiniciar { background: #f8bbd0; color: #ad1457; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
