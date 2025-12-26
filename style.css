@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Scroll vertical total */
+    overflow-y: auto; /* Bajar toda la página */
     background-color: #fdfdfd;
     font-family: 'Helvetica', Arial, sans-serif;
 }
@@ -20,7 +20,7 @@ html, body {
     flex-wrap: nowrap;
     gap: 15px;
     padding: 20px;
-    overflow-x: auto; /* Scroll horizontal de semestres */
+    overflow-x: auto; /* Semestres en horizontal */
     align-items: flex-start;
 }
 
@@ -42,7 +42,7 @@ html, body {
 }
 
 .ramo {
-    background-color: #fff1f6; /* Rosado fondo */
+    background-color: #fff1f6; /* Rosado fondo ramos */
     border: 1px solid #f8bbd0;
     padding: 12px;
     border-radius: 10px;
