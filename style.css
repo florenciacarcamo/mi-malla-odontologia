@@ -1,59 +1,61 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Scroll vertical fluido */
-    background-color: #f4f7f9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: auto; /* Permite scroll vertical en toda la página */
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .header-malla {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     background: white;
+    border-bottom: 4px solid #ad1457;
 }
 
 .malla-container {
     display: flex;
     flex-wrap: nowrap;
-    gap: 12px;
-    padding: 20px;
+    gap: 15px;
+    padding: 30px;
     overflow-x: auto; /* Scroll horizontal de semestres */
     align-items: flex-start;
 }
 
 .semestre {
-    min-width: 170px;
+    min-width: 190px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .sem-header {
-    background-color: #0056b3; /* Azul como la imagen de referencia */
+    background-color: #0056b3; /* Azul para encabezados */
     color: white;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .ramo {
-    background-color: #fff1f6; /* Rosado suave */
+    background-color: #fff1f6; /* Rosado de fondo */
     border: 2px solid #f8bbd0;
-    padding: 12px;
-    border-radius: 8px;
-    min-height: 85px;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 100px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    text-align: center;
     justify-content: center;
+    text-align: center;
+    transition: 0.2s;
 }
 
-.sigla { font-size: 10px; font-weight: bold; color: #ad1457; margin-bottom: 5px; }
-.ramo p { margin: 0; font-size: 12px; color: #ad1457; font-weight: 500; }
+.sigla { font-size: 11px; font-weight: bold; color: #ad1457; }
+.ramo p { margin: 8px 0 0 0; font-size: 13px; color: #ad1457; font-weight: 500; }
 
-/* ESTADO APROBADO: Mantiene el rosado pero tacha el texto */
+/* ESTADO APROBADO: Mismo color pero tachado */
 .aprobado {
     background-color: #fff1f6 !important;
     border: 2px solid #ad1457 !important;
@@ -64,7 +66,7 @@ html, body {
     opacity: 0.6;
 }
 
-/* ESTADO BLOQUEADO: Gris */
+/* BLOQUEADO: Gris */
 .bloqueado {
     background-color: #e9ecef;
     color: #adb5bd;
@@ -73,7 +75,6 @@ html, body {
 }
 .bloqueado p, .bloqueado .sigla { color: #adb5bd !important; }
 
-/* Barra de progreso */
-.progress-bar { width: 300px; height: 10px; background: #eee; border-radius: 5px; margin: 10px auto; overflow: hidden; }
+.progress-bar { width: 300px; height: 12px; background: #eee; border-radius: 6px; margin: 15px auto; overflow: hidden; }
 #progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
-.btn-reiniciar { background: white; border: 1px solid #ad1457; padding: 5px 15px; border-radius: 20px; color: #ad1457; cursor: pointer; }
+.btn-reiniciar { background: white; border: 1px solid #ad1457; padding: 10px 20px; border-radius: 20px; color: #ad1457; cursor: pointer; }
