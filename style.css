@@ -1,71 +1,75 @@
-body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; overflow-y: hidden; }
+/* Permite bajar la página */
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background-color: #f8f9fa; 
+    margin: 0; 
+    padding: 20px; 
+    overflow-y: auto; /* AHORA SÍ PUEDES BAJAR */
+}
 
 .header-malla { text-align: center; margin-bottom: 20px; color: #ad1457; }
 
-/* ESTO FUERZA LA FILA HORIZONTAL */
 .malla-container {
     display: flex;
-    flex-wrap: nowrap; /* No rompe la línea */
-    gap: 12px;
-    overflow-x: auto; /* Scroll lateral si no cabe */
-    padding-bottom: 40px;
-    height: 85vh;
+    flex-wrap: nowrap;
+    gap: 15px;
+    overflow-x: auto; /* Scroll horizontal para los semestres */
+    padding-bottom: 50px;
+    align-items: flex-start;
 }
 
 .semestre {
-    min-width: 170px;
+    min-width: 180px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .sem-header {
-    background-color: #fce4ec;
-    color: #ad1457;
+    background-color: #ad1457; /* Azul/Rojo UC según el PDF */
+    color: white;
     text-align: center;
     padding: 10px;
     font-weight: bold;
     border-radius: 6px;
-    border: 1px solid #f8bbd0;
 }
 
 .ramo {
-    border: 2px solid #f48fb1;
-    padding: 10px;
+    background-color: white;
+    border: 2px solid #f48fb1; /* Borde Rosado inicial */
+    padding: 12px;
     border-radius: 8px;
-    min-height: 85px;
+    min-height: 90px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-.sigla { font-size: 10px; font-weight: bold; color: #ad1457; margin-bottom: 5px; }
-.ramo p { margin: 0; font-size: 12px; font-weight: 500; }
+.sigla { font-size: 10px; font-weight: bold; color: #ad1457; }
+.ramo p { margin: 5px 0 0 0; font-size: 12px; font-weight: 500; color: #333; }
 
-/* ROSADO: Pendiente */
-.disponible { background-color: #fff1f6; }
-
-/* MORADO: Aprobado */
+/* ESTADO: APROBADO (Morado, Tachado, Borde Rosado fuerte) */
 .aprobado { 
     background-color: #6a1b9a !important; 
     color: white !important; 
     text-decoration: line-through;
-    border-color: #4a148c;
+    border: 2px solid #ad1457 !important; /* El borde rosado que pediste */
 }
-.aprobado .sigla { color: #e1bee7; }
 
-/* GRIS: Bloqueado */
+.aprobado p, .aprobado .sigla { color: white !important; }
+
+/* ESTADO: BLOQUEADO */
 .bloqueado { 
-    background-color: #e0e0e0; 
-    color: #9e9e9e; 
-    border-color: #bdbdbd;
-    pointer-events: none; /* No deja hacer click */
+    background-color: #e9ecef; 
+    color: #adb5bd; 
+    border-color: #dee2e6;
+    pointer-events: none;
 }
-.bloqueado .sigla { color: #9e9e9e; }
+.bloqueado .sigla, .bloqueado p { color: #adb5bd !important; }
 
 /* Barra de progreso */
-.progress-bar { width: 300px; height: 10px; background: #ddd; border-radius: 5px; margin: 10px auto; overflow: hidden; }
+.progress-bar { width: 300px; height: 12px; background: #e9ecef; border-radius: 6px; margin: 10px auto; overflow: hidden; border: 1px solid #dee2e6; }
 #progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
