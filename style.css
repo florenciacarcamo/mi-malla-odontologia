@@ -1,63 +1,71 @@
-body { font-family: 'Helvetica', sans-serif; background-color: #fdfdfd; margin: 0; padding: 20px; }
-.header-malla { text-align: center; color: #8e1d41; margin-bottom: 30px; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; overflow-y: hidden; }
 
+.header-malla { text-align: center; margin-bottom: 20px; color: #ad1457; }
+
+/* ESTO FUERZA LA FILA HORIZONTAL */
 .malla-container {
     display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding: 20px 0;
+    flex-wrap: nowrap; /* No rompe la línea */
+    gap: 12px;
+    overflow-x: auto; /* Scroll lateral si no cabe */
+    padding-bottom: 40px;
+    height: 85vh;
 }
 
 .semestre {
-    min-width: 180px;
+    min-width: 170px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .sem-header {
-    background-color: #f8bbd0;
+    background-color: #fce4ec;
     color: #ad1457;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 6px;
+    border: 1px solid #f8bbd0;
 }
 
 .ramo {
-    border: 1px solid #f48fb1;
+    border: 2px solid #f48fb1;
     padding: 10px;
     border-radius: 8px;
-    min-height: 80px;
+    min-height: 85px;
     cursor: pointer;
-    transition: 0.3s;
-    font-size: 11px;
-    position: relative;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
-.sigla { font-size: 10px; color: #ad1457; font-weight: bold; }
+.sigla { font-size: 10px; font-weight: bold; color: #ad1457; margin-bottom: 5px; }
+.ramo p { margin: 0; font-size: 12px; font-weight: 500; }
 
 /* ROSADO: Pendiente */
 .disponible { background-color: #fff1f6; }
-.disponible:hover { background-color: #fce4ec; }
 
 /* MORADO: Aprobado */
 .aprobado { 
     background-color: #6a1b9a !important; 
     color: white !important; 
-    text-decoration: line-through; 
+    text-decoration: line-through;
+    border-color: #4a148c;
 }
 .aprobado .sigla { color: #e1bee7; }
 
 /* GRIS: Bloqueado */
 .bloqueado { 
-    background-color: #f5f5f5; 
-    color: #bdbdbd; 
-    border-color: #e0e0e0;
-    pointer-events: none;
+    background-color: #e0e0e0; 
+    color: #9e9e9e; 
+    border-color: #bdbdbd;
+    pointer-events: none; /* No deja hacer click */
 }
-.bloqueado .sigla { color: #bdbdbd; }
+.bloqueado .sigla { color: #9e9e9e; }
 
 /* Barra de progreso */
-.progress-bar { width: 300px; height: 15px; background: #eee; border-radius: 10px; margin: 10px auto; overflow: hidden; }
+.progress-bar { width: 300px; height: 10px; background: #ddd; border-radius: 5px; margin: 10px auto; overflow: hidden; }
 #progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
