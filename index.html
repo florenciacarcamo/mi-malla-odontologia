@@ -10,16 +10,16 @@
     <div class="header-malla">
         <h1>Malla Interactiva – Odontología – UC</h1>
         <div class="stats-container">
-            <p>Avance: <span id="porcentaje">0.0</span>% | Ramos: <span id="contador">0</span>/62</p>
+            <p>Avance total: <span id="porcentaje">0.0</span>% | Ramos: <span id="contador">0</span>/62</p>
             <div class="progress-bar"><div id="progress-fill"></div></div>
         </div>
-        <button onclick="reiniciarMalla()" class="btn-reiniciar">Borrar Progreso</button>
+        <button onclick="reiniciarMalla()" class="btn-reiniciar">Reiniciar malla</button>
     </div>
 
     <div class="malla-container">
         <div class="semestre">
             <div class="sem-header">I</div>
-            <div class="ramo disponible" id="ODO103" onclick="marcar('ODO103')"><span class="sigla">ODO103</span><p>Intro. Odontología</p></div>
+            <div class="ramo disponible" id="ODO103" onclick="marcar('ODO103')"><span class="sigla">ODO103</span><p>Intro. a la Odontología</p></div>
             <div class="ramo disponible" id="MED1030" onclick="marcar('MED1030')"><span class="sigla">MED1030</span><p>Anatomía I</p></div>
             <div class="ramo disponible" id="QIM2010" onclick="marcar('QIM2010')"><span class="sigla">QIM2010</span><p>Química</p></div>
             <div class="ramo disponible" id="BIO2140" onclick="marcar('BIO2140')"><span class="sigla">BIO2140</span><p>Bio. Celular I</p></div>
@@ -36,13 +36,19 @@
         </div>
 
         <div class="semestre">
+            <div class="sem-header">III</div>
+            <div class="ramo bloqueado" id="ODO205" data-req="MED1040" onclick="marcar('ODO205')"><span class="sigla">ODO205</span><p>Neurociencias</p></div>
+            <div class="ramo bloqueado" id="ODO206" data-req="ODO103" onclick="marcar('ODO206')"><span class="sigla">ODO206</span><p>Pre. Restauradora I</p></div>
+            <div class="ramo bloqueado" id="BIO2540" data-req="BIO2160" onclick="marcar('BIO2540')"><span class="sigla">BIO2540</span><p>Fisiología</p></div>
+            <div class="ramo bloqueado" id="ODO207" data-req="ODO104" onclick="marcar('ODO207')"><span class="sigla">ODO207</span><p>Epidemiología</p></div>
+            <div class="ramo disponible" id="TIF" onclick="marcar('TIF')"><span class="sigla">TIF</span><p>Formación Teológica</p></div>
+        </div>
+
+        <div class="semestre">
             <div class="sem-header">FG</div>
             <div class="ramo disponible" id="FG1" onclick="marcar('FG1')"><span class="sigla">FG</span><p>Formación General 1</p></div>
             <div class="ramo disponible" id="FG2" onclick="marcar('FG2')"><span class="sigla">FG</span><p>Formación General 2</p></div>
             <div class="ramo disponible" id="FG3" onclick="marcar('FG3')"><span class="sigla">FG</span><p>Formación General 3</p></div>
-            <div class="ramo disponible" id="FG4" onclick="marcar('FG4')"><span class="sigla">FG</span><p>Formación General 4</p></div>
-            <div class="ramo disponible" id="FG5" onclick="marcar('FG5')"><span class="sigla">FG</span><p>Formación General 5</p></div>
-            <div class="ramo disponible" id="FG6" onclick="marcar('FG6')"><span class="sigla">FG</span><p>Formación General 6</p></div>
         </div>
     </div>
     <script src="script.js"></script>
