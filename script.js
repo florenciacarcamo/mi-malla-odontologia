@@ -1,7 +1,28 @@
+// Al cargar la página, recupera el progreso guardado
+window.onload = function() {
+    const guardado = JSON.parse(localStorage.getItem('mallaOdontoProgreso')) || [];
+    
+    guardado.forEach(id => {
+        const ramo = document.getElementById(id);
+        if (ramo) ramo.classList.add('aprobado');
+    });
+
+    actualizarMalla();
+};
+
 function marcar(id) {
     const ramo = document.getElementById(id);
     ramo.classList.toggle('aprobado');
+    
+    // Guardar el estado actual
+    guardarProgreso();
     actualizarMalla();
+}
+
+function guardarProgreso() {
+    const aprobados = document.querySelectorAll('.ramo.aprobado');
+    const listaIds = Array.from(aprobados).map(r => r.id);
+    localStorage.setItem('mallaOdontoProgreso', JSON.stringify(listaIds));
 }
 
 function actualizarMalla() {
@@ -22,10 +43,16 @@ function actualizarMalla() {
         if (r.classList.contains('aprobado')) contador++;
     });
 
+    // Actualizar números y barra
     document.getElementById('contador').innerText = contador;
     const porcentaje = ((contador / ramos.length) * 100).toFixed(1);
     document.getElementById('porcentaje').innerText = porcentaje;
     document.getElementById('progress-fill').style.width = porcentaje + "%";
 }
 
-window.onload = actualizarMalla;
+function reiniciarMalla() {
+    if(confirm("¿Seguro que quieres borrar todo tu progreso?")) {
+        localStorage.removeItem('mallaOdontoProgreso');
+        location.reload();
+    }
+}
