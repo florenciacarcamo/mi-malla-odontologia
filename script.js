@@ -1,5 +1,5 @@
 window.onload = function() {
-    const data = JSON.parse(localStorage.getItem('mallaOdontoUC')) || [];
+    const data = JSON.parse(localStorage.getItem('mallaOdont')) || [];
     data.forEach(id => {
         const el = document.getElementById(id);
         if(el) el.classList.add('aprobado');
@@ -11,7 +11,7 @@ function marcar(id) {
     const el = document.getElementById(id);
     el.classList.toggle('aprobado');
     const aprobados = Array.from(document.querySelectorAll('.ramo.aprobado')).map(r => r.id);
-    localStorage.setItem('mallaOdontoUC', JSON.stringify(aprobados));
+    localStorage.setItem('mallaOdont', JSON.stringify(aprobados));
     actualizarMalla();
 }
 
@@ -19,24 +19,19 @@ function actualizarMalla() {
     const ramos = document.querySelectorAll('.ramo');
     let count = 0;
     let totalCr = 0;
-    
     ramos.forEach(r => {
         const req = r.getAttribute('data-req');
-        if(req) {
-            const pre = document.getElementById(req);
-            if(pre && pre.classList.contains('aprobado')) {
-                r.classList.remove('bloqueado');
-            } else {
-                r.classList.add('bloqueado');
-                r.classList.remove('aprobado');
-            }
+        if(req && !document.getElementById(req).classList.contains('aprobado')) {
+            r.classList.add('bloqueado');
+            r.classList.remove('aprobado');
+        } else {
+            r.classList.remove('bloqueado');
         }
         if(r.classList.contains('aprobado')) {
             count++;
             totalCr += parseInt(r.getAttribute('data-cr') || 0);
         }
     });
-    
     const porc = ((count / ramos.length) * 100).toFixed(1);
     document.getElementById('porcentaje').innerText = porc;
     document.getElementById('creditos').innerText = totalCr;
@@ -44,8 +39,8 @@ function actualizarMalla() {
 }
 
 function reiniciarMalla() {
-    if(confirm("¿Seguro quieres reiniciar tu progreso?")) {
-        localStorage.removeItem('mallaOdontoUC');
+    if(confirm("¿Reiniciar progreso?")) {
+        localStorage.removeItem('mallaOdont');
         location.reload();
     }
 }
