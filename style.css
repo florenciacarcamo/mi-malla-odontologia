@@ -1,70 +1,82 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Permite bajar toda la página */
+    overflow-y: auto; /* Scroll vertical fluido en toda la página */
     background-color: #fdfdfd;
-    font-family: 'Helvetica', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header-malla {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     background: white;
     border-bottom: 2px solid #ad1457;
 }
 
+.header-malla h1 { color: #8e1d41; margin: 0; }
+
 .malla-container {
     display: flex;
-    flex-wrap: nowrap; /* Mantiene la horizontalidad estricta */
+    flex-wrap: nowrap;
     gap: 15px;
     padding: 20px;
-    overflow-x: auto; /* Scroll lateral de semestres */
+    overflow-x: auto; /* Scroll horizontal de semestres */
     align-items: flex-start;
 }
 
 .semestre {
-    min-width: 205px; /* Ancho fijo para que no se amontone el texto */
+    min-width: 205px; /* Evita que los semestres se desordenen */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .sem-header {
-    background-color: #fce4ec; /* Rosado claro */
+    background-color: #fce4ec; /* Rosado claro de encabezado */
     color: #ad1457;
     text-align: center;
     padding: 10px;
     font-weight: bold;
     border-radius: 4px;
+    text-transform: uppercase;
 }
 
 .ramo {
-    background-color: #fff1f6; /* Rosado fondo */
+    background-color: #fff1f6; /* Rosado de fondo para ramos */
     border: 1px solid #f8bbd0;
     padding: 12px;
-    border-radius: 8px;
-    min-height: 110px; /* Un poco más alto para nombres completos */
+    border-radius: 10px;
+    min-height: 110px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    text-align: left;
     justify-content: center;
+    text-align: left;
     transition: 0.2s;
 }
 
-.sigla { font-size: 10px; font-weight: bold; color: #ad1457; }
-.ramo p { margin: 5px 0 0 0; font-size: 11.5px; color: #8e1d41; font-weight: 500; line-height: 1.2; }
+.sigla { font-size: 11px; font-weight: bold; color: #ad1457; }
+.ramo p { margin: 8px 0 0 0; font-size: 13px; color: #8e1d41; font-weight: 500; line-height: 1.2; }
 
-/* ESTADO APROBADO: Mantiene el rosado y aplica tachado */
-.aprobado { background-color: #fff1f6 !important; }
-.aprobado p, .aprobado .sigla {
-    text-decoration: line-through;
-    opacity: 0.5;
+/* ESTADO APROBADO: Mantiene rosado y aplica tachado */
+.aprobado {
+    background-color: #fff1f6 !important;
 }
 
+.aprobado p, .aprobado .sigla {
+    text-decoration: line-through; /* Tachado solicitado */
+    opacity: 0.6;
+}
+
+/* ESTADO BLOQUEADO: Gris */
 .bloqueado {
     background-color: #f5f5f5;
-    color: #bdbdbd;
-    border-color: #e0e0e0;
+    color: #adb5bd;
+    border-color: #dee2e6;
     pointer-events: none;
 }
+.bloqueado p, .bloqueado .sigla { color: #adb5bd !important; }
+
+.progress-bar { width: 300px; height: 12px; background: #eee; border-radius: 6px; margin: 15px auto; overflow: hidden; }
+#progress-fill { height: 100%; background: #ad1457; width: 0%; transition: 0.5s; }
+.btn-reiniciar { background: #fce4ec; border: none; padding: 10px 20px; border-radius: 20px; color: #ad1457; cursor: pointer; font-weight: bold; }
